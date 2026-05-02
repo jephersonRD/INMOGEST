@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vender Propiedad - INMOGEST SRL</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/vender.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="srl.jpg" alt="INMOGEST SRL Logo" class="logo-img">
+                    <span class="logo-text">INMOGEST SRL</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="propiedades.html" class="nav-link">Propiedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vender.html" class="nav-link active">Vender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#servicios" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Vender tu Propiedad</h1>
+                <p class="page-subtitle">Publica tu propiedad y encuentra el comprador ideal</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Vender Propiedad</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Process Info -->
+    <section class="process-info">
+        <div class="container">
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>1. Complete el Formulario</h3>
+                    <p>Proporcione toda la información detallada de su propiedad</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>2. Evaluación Gratuita</h3>
+                    <p>Nuestros expertos evaluarán su propiedad sin costo</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>3. Publicación</h3>
+                    <p>Su propiedad se publicará en nuestro portal inmediatamente</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>4. Venta Exitosa</h3>
+                    <p>Te acompañamos hasta cerrar la venta de manera exitosa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Form -->
+    <section class="sell-form-section">
+        <div class="container">
+            <div class="form-header">
+                <h2 class="section-title">Información de la Propiedad</h2>
+                <p class="section-subtitle">Complete todos los campos para una mejor presentación</p>
+            </div>
+
+            <!-- Form Tabs -->
+            <div class="form-tabs">
+                <button type="button" class="tab-btn active" data-tab="basic">
+                    <i class="fas fa-home"></i>
+                    Información Básica
+                    <span class="step-indicator">1</span>
+                </button>
+                <button type="button" class="tab-btn disabled" data-tab="details" id="detailsTab">
+                    <i class="fas fa-info-circle"></i>
+                    Detalles
+                    <span class="step-indicator">2</span>
+                </button>
+            </div>
+
+            <!-- Progress indicator -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">Complete la información básica para continuar</p>
+            </div>
+
+            <form id="sellPropertyForm" class="sell-form">
+                <!-- Tab 1: Información Básica -->
+                <div class="tab-content active" data-tab="basic">
+                    <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-home"></i>
+                        Información Básica
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="propertyTitle">Título de la Propiedad *</label>
+                            <input type="text" id="propertyTitle" name="title" required placeholder="Ej: Casa moderna en excelente ubicación">
+                        </div>
+                        <div class="form-group">
+                            <label for="propertyType">Tipo de Propiedad *</label>
+                            <select id="propertyType" name="type" required>
+                                <option value="">Seleccionar tipo...</option>
+                                <option value="casa">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="terreno">Terreno</option>
+                                <option value="hotel">Hotel</option>
+                                <option value="residencial">Residencial</option>
+                                <option value="edificio">Edificio</option>
+                                <option value="local-comercial">Local Comercial</option>
+                                <option value="oficina">Oficina</option>
+                                <option value="bodega">Bodega</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="propertyDescription">Descripción Detallada *</label>
+                        <textarea id="propertyDescription" name="description" rows="5" required placeholder="Describa su propiedad con el mayor detalle posible: características, acabados, ubicación, ventajas..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Ubicación
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label for="fullAddress">Dirección Completa *</label>
+                        <input type="text" id="fullAddress" name="address" required placeholder="Calle, número, sector, ciudad">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">Ciudad *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Provincia *</label>
+                            <select id="province" name="province" required>
+                                <option value="">Seleccionar provincia...</option>
+                                <option value="distrito-nacional">Distrito Nacional</option>
+                                <option value="santo-domingo">Santo Domingo</option>
+                                <option value="santiago">Santiago</option>
+                                <option value="la-altagracia">La Altagracia</option>
+                                <option value="puerto-plata">Puerto Plata</option>
+                                <option value="san-pedro">San Pedro de Macorís</option>
+                                <option value="la-romana">La Romana</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="neighborhood">Sector/Barrio</label>
+                            <input type="text" id="neighborhood" name="neighborhood">
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">Código Postal</label>
+                            <input type="text" id="zipCode" name="zipCode">
+                        </div>
+                    </div>
+                    
+                    <!-- Botón Siguiente dentro de Información Básica -->
+                    <div style="text-align: center; margin-top: 30px; padding: 20px; border-top: 1px solid #eee;">
+                        <button type="button" class="btn btn-success" onclick="goToDetails()" style="padding: 15px 30px; font-size: 16px; background-color: #28a745 !important; color: white !important; border: none; border-radius: 8px; cursor: pointer;">
+                            <i class="fas fa-arrow-right" style="margin-right: 8px;"></i>
+                            Continuar a Detalles →
+                        </button>
+                        <p style="margin-top: 10px; color: #666; font-size: 14px;">Haga clic para ir al siguiente paso</p>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Detalles -->
+                <div class="tab-content" data-tab="details">
+                    <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Detalles de la Propiedad
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="price">Precio de Venta (USD) *</label>
+                            <input type="number" id="price" name="price" required min="0" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="negotiable">¿Precio Negociable?</label>
+                            <select id="negotiable" name="negotiable">
+                                <option value="no">No</option>
+                                <option value="yes">Sí</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="constructionSize">Área de Construcción (m²) *</label>
+                            <input type="number" id="constructionSize" name="constructionSize" required min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="landSize">Área del Terreno (m²)</label>
+                            <input type="number" id="landSize" name="landSize" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bedrooms">Habitaciones</label>
+                            <select id="bedrooms" name="bedrooms">
+                                <option value="">Seleccionar...</option>
+                                <option value="0">0 (Estudio)</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bathrooms">Baños</label>
+                            <select id="bathrooms" name="bathrooms">
+                                <option value="">Seleccionar...</option>
+                                <option value="1">1</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                                <option value="2.5">2.5</option>
+                                <option value="3">3</option>
+                                <option value="3.5">3.5</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parking">Estacionamientos</label>
+                            <select id="parking" name="parking">
+                                <option value="">Seleccionar...</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearBuilt">Año de Construcción</label>
+                            <input type="number" id="yearBuilt" name="yearBuilt" min="1900" max="2024">
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Property Features -->
+                    <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-star"></i>
+                        Características Especiales
+                    </h3>
+                    
+                    <div class="features-grid">
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="piscina">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-swimming-pool"></i>
+                            Piscina
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="jardin">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-leaf"></i>
+                            Jardín
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="terraza">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-building"></i>
+                            Terraza
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="balcon">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-home"></i>
+                            Balcón
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="garage">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-car"></i>
+                            Garage Techado
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="seguridad">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-shield-alt"></i>
+                            Seguridad 24/7
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="ascensor">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-elevator"></i>
+                            Ascensor
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="aire-acondicionado">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-snowflake"></i>
+                            Aire Acondicionado
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="cocina-equipada">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-utensils"></i>
+                            Cocina Equipada
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="amueblada">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-couch"></i>
+                            Amueblada
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="vista-mar">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-water"></i>
+                            Vista al Mar
+                        </label>
+                        <label class="feature-checkbox">
+                            <input type="checkbox" name="features" value="gimnasio">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-dumbbell"></i>
+                            Gimnasio
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Images -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-camera"></i>
+                        Imágenes de la Propiedad
+                    </h3>
+                    
+                    <div class="image-upload-container">
+                        <div class="upload-zone" id="imageUploadZone">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h4>Subir Imágenes</h4>
+                            <p>Arrastra las imágenes aquí o haz clic para seleccionar</p>
+                            <p class="upload-note">Formatos permitidos: JPG, PNG, WebP. Máximo 10 imágenes.</p>
+                            <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+                        </div>
+                        <div id="imagePreview" class="image-preview-grid"></div>
+                    </div>
+
+
+                    <!-- Información de Contacto -->
+                    <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-user"></i>
+                        Información de Contacto
+                    </h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ownerName">Nombre Completo *</label>
+                            <input type="text" id="ownerName" name="ownerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerEmail">Correo Electrónico *</label>
+                            <input type="email" id="ownerEmail" name="ownerEmail" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ownerPhone">Teléfono Principal *</label>
+                            <input type="tel" id="ownerPhone" name="ownerPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerAltPhone">Teléfono Alternativo</label>
+                            <input type="tel" id="ownerAltPhone" name="ownerAltPhone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredContact">Horario Preferido de Contacto</label>
+                        <select id="preferredContact" name="preferredContact">
+                            <option value="">Cualquier horario</option>
+                            <option value="morning">Mañana (8:00 AM - 12:00 PM)</option>
+                            <option value="afternoon">Tarde (12:00 PM - 6:00 PM)</option>
+                            <option value="evening">Noche (6:00 PM - 9:00 PM)</option>
+                            <option value="weekends">Solo fines de semana</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="form-section">
+                    <h3 class="form-section-title">
+                        <i class="fas fa-plus-circle"></i>
+                        Información Adicional
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label for="saleReason">Motivo de la Venta</label>
+                        <select id="saleReason" name="saleReason">
+                            <option value="">Preferir no decir</option>
+                            <option value="mudanza">Mudanza</option>
+                            <option value="mejora">Compra de propiedad más grande</option>
+                            <option value="inversion">Inversión</option>
+                            <option value="urgente">Venta urgente</option>
+                            <option value="herencia">Herencia</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgency">Urgencia de la Venta</label>
+                        <select id="urgency" name="urgency">
+                            <option value="flexible">Flexible (6+ meses)</option>
+                            <option value="moderate">Moderada (3-6 meses)</option>
+                            <option value="urgent">Urgente (1-3 meses)</option>
+                            <option value="immediate">Inmediata (menos de 1 mes)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalComments">Comentarios Adicionales</label>
+                        <textarea id="additionalComments" name="additionalComments" rows="3" placeholder="Cualquier información adicional que considere importante..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="form-section">
+                    <div class="terms-section">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                            <span class="checkmark"></span>
+                            Acepto los <a href="#" target="_blank">términos y condiciones</a> de INMOGEST SRL *
+                        </label>
+                    </div>
+
+                    <div class="terms-section">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="acceptPrivacy" name="acceptPrivacy" required>
+                            <span class="checkmark"></span>
+                            Acepto el tratamiento de mis datos según la <a href="#" target="_blank">política de privacidad</a> *
+                        </label>
+                    </div>
+
+                    <div class="terms-section">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="acceptCommission" name="acceptCommission" required>
+                            <span class="checkmark"></span>
+                            Acepto la comisión del 3% sobre el precio de venta final *
+                        </label>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="tab-navigation">
+                    <button type="button" class="btn btn-secondary" id="prevBtn" onclick="previousTab()" style="display: none;">
+                        <i class="fas fa-arrow-left"></i>
+                        Anterior
+                    </button>
+                    
+                    <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextTab()">
+                        <i class="fas fa-arrow-right"></i>
+                        Continuar a Detalles
+                    </button>
+                    
+                    
+                    <button type="submit" class="btn btn-success btn-large" id="submitBtn" style="display: none;">
+                        <i class="fas fa-upload"></i>
+                        Publicar Propiedad
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>¡Propiedad Publicada Exitosamente!</h2>
+            <p>Su propiedad ha sido enviada para revisión. Será publicada en nuestro portal en las próximas 24 horas.</p>
+            <div class="reference-number">
+                <strong>ID de Propiedad: <span id="propertyId"></span></strong>
+            </div>
+            <div class="modal-actions">
+                <a href="propiedades.html" class="btn btn-primary">Ver Mi Propiedad en la Web</a>
+                <button type="button" class="btn btn-secondary" onclick="closeSuccessModal()">Cerrar</button>
+                <button type="button" class="btn btn-success" onclick="window.location.reload()">Publicar Otra Propiedad</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="srl.jpg" alt="INMOGEST SRL Logo">
+                        <span>INMOGEST SRL</span>
+                    </div>
+                    <p>Tu socio de confianza en bienes raíces en República Dominicana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="propiedades.html">Propiedades</a></li>
+                        <li><a href="vender.html">Vender</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +1 (809) 555-0123</p>
+                        <p><i class="fas fa-envelope"></i> info@inmoges.com.do</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 INMOGEST SRL. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/sell.js"></script>
+    <script>
+        // Cargar tema guardado al entrar a la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+    
+    
+</body>
+</html>

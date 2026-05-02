@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Propiedad - INMOGEST SRL</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/detalle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="srl.jpg" alt="INMOGEST SRL Logo" class="logo-img">
+                    <span class="logo-text">INMOGEST SRL</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="propiedades.html" class="nav-link">Propiedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vender.html" class="nav-link">Vender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#servicios" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="propiedades.html">Propiedades</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="breadcrumbTitle">Cargando...</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Property Detail -->
+    <section class="property-detail">
+        <div class="container">
+            <div id="propertyContent" class="property-content">
+                <!-- El contenido se cargará dinámicamente -->
+                <div class="loading-detail">
+                    <div class="loading-spinner"></div>
+                    <p>Cargando detalles de la propiedad...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Properties -->
+    <section class="related-properties">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Propiedades Similares</h2>
+                <p class="section-subtitle">Te podrían interesar estas otras opciones</p>
+            </div>
+            <div id="relatedProperties" class="related-grid">
+                <!-- Las propiedades relacionadas se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Agent Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contactar Agente</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="contactAgentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Nombre Completo *</label>
+                            <input type="text" id="contactName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Teléfono *</label>
+                            <input type="tel" id="contactPhone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Correo Electrónico *</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Asunto</label>
+                        <select id="contactSubject" name="subject">
+                            <option value="info">Solicitar más información</option>
+                            <option value="visit">Programar visita</option>
+                            <option value="offer">Hacer una oferta</option>
+                            <option value="financing">Consultar financiamiento</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Mensaje</label>
+                        <textarea id="contactMessage" name="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <input type="hidden" id="propertyId" name="propertyId">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Visit Modal -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Programar Visita</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="scheduleVisitForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="visitName">Nombre Completo *</label>
+                            <input type="text" id="visitName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="visitPhone">Teléfono *</label>
+                            <input type="tel" id="visitPhone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitEmail">Correo Electrónico *</label>
+                        <input type="email" id="visitEmail" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="visitDate">Fecha Preferida *</label>
+                            <input type="date" id="visitDate" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="visitTime">Hora Preferida *</label>
+                            <select id="visitTime" name="time" required>
+                                <option value="">Seleccionar hora...</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitNotes">Notas adicionales</label>
+                        <textarea id="visitNotes" name="notes" rows="3" placeholder="Alguna preferencia especial para la visita..."></textarea>
+                    </div>
+                    <input type="hidden" id="schedulePropertyId" name="propertyId">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        Programar Visita
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Gallery Modal -->
+    <div id="galleryModal" class="modal gallery-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="gallery-container">
+                <div class="swiper gallerySwiper">
+                    <div class="swiper-wrapper" id="gallerySlides">
+                        <!-- Las imágenes se cargarán dinámicamente -->
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="srl.jpg" alt="INMOGEST SRL Logo">
+                        <span>INMOGEST SRL</span>
+                    </div>
+                    <p>Tu socio de confianza en bienes raíces en República Dominicana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="propiedades.html">Propiedades</a></li>
+                        <li><a href="vender.html">Vender</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +1 (809) 555-0123</p>
+                        <p><i class="fas fa-envelope"></i> info@inmoges.com.do</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 INMOGEST SRL. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="propiedades-nuevas/database.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/detail.js"></script>
+    <script>
+        // Cargar tema guardado al entrar a la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+    
+    
+</body>
+</html>

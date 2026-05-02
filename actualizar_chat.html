@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualización Chat INMOGEST SRL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .update-box {
+            background: linear-gradient(135deg, #2C5282, #4299E1);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .step {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #2C5282;
+            background: white;
+            border-radius: 4px;
+        }
+        .btn {
+            background: #2C5282;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #1a365d;
+        }
+        .success {
+            background: #38a169;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .config-details {
+            background: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="update-box">
+        <h1>🎉 Chat INMOGEST SRL Actualizado</h1>
+        <p>El chat ha sido actualizado con las nuevas funciones de voz de n8n</p>
+    </div>
+
+    <div class="steps">
+        <h2>✅ Actualizaciones Aplicadas:</h2>
+        
+        <div class="step">
+            <strong>1. Configuración de Voz:</strong>
+            <div class="config-details">
+                <ul>
+                    <li><strong>Idioma:</strong> Español Venezuela (es-VE)</li>
+                    <li><strong>Voz:</strong> Nova (Femenino Profesional)</li>
+                    <li><strong>Entrada de voz:</strong> ✅ Habilitada</li>
+                    <li><strong>Salida de voz:</strong> ✅ Habilitada</li>
+                    <li><strong>Controles:</strong> Pausa/Reproducción incluidos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step">
+            <strong>2. Widget N8N:</strong>
+            <p>El código se actualizó para usar el widget oficial de n8n con todas las funciones de voz</p>
+        </div>
+
+        <div class="step">
+            <strong>3. Integración Completa:</strong>
+            <p>Mantenemos nuestro chat personalizado como respaldo y agregamos el widget oficial</p>
+        </div>
+    </div>
+
+    <div class="steps">
+        <h2>🚀 Instrucciones para Probar:</h2>
+        
+        <div class="step">
+            <strong>Paso 1:</strong> Limpiar caché del navegador
+            <br>
+            <button class="btn" onclick="clearCache()">🧹 Limpiar Caché</button>
+        </div>
+
+        <div class="step">
+            <strong>Paso 2:</strong> Recargar página principal
+            <br>
+            <button class="btn" onclick="reloadMain()">🔄 Ir a Página Principal</button>
+        </div>
+
+        <div class="step">
+            <strong>Paso 3:</strong> Probar el chat de voz
+            <ul>
+                <li>Busca la burbuja flotante azul</li>
+                <li>Haz clic para abrir el chat</li>
+                <li>Verás el botón de micrófono en el campo de texto</li>
+                <li>Haz clic en el micrófono y habla</li>
+                <li>Sofía responderá con voz automáticamente</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="steps">
+        <h2>🎯 Nuevas Funcionalidades:</h2>
+        
+        <div class="step">
+            <strong>Entrada de Voz:</strong>
+            <p>Haz clic en el micrófono y habla. El sistema transcribirá automáticamente tu mensaje.</p>
+        </div>
+
+        <div class="step">
+            <strong>Salida de Voz:</strong>
+            <p>Sofía responderá tanto en texto como en audio. Puedes pausar/reproducir el audio.</p>
+        </div>
+
+        <div class="step">
+            <strong>Modo Teléfono:</strong>
+            <p>En modo voz, la interfaz se transforma para simular una llamada telefónica.</p>
+        </div>
+    </div>
+
+    <div id="status"></div>
+
+    <script>
+        function clearCache() {
+            // Clear localStorage and sessionStorage
+            if (typeof(Storage) !== "undefined") {
+                localStorage.clear();
+                sessionStorage.clear();
+            }
+            
+            // Attempt to reload with cache bypass
+            showStatus('✅ Caché limpiada. Recargando página...', 'success');
+            
+            setTimeout(() => {
+                // Force cache reload
+                window.location.href = window.location.href + '?nocache=' + Date.now();
+            }, 1000);
+        }
+        
+        function reloadMain() {
+            showStatus('🔄 Redirigiendo a página principal...', 'success');
+            setTimeout(() => {
+                window.location.href = 'index.html?refresh=' + Date.now();
+            }, 1000);
+        }
+        
+        function showStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<div class="${type}">${message}</div>`;
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusDiv.innerHTML = '';
+                }, 3000);
+            }
+        }
+        
+        // Auto-check if we can access the main page
+        window.onload = function() {
+            fetch('index.html')
+                .then(response => {
+                    if (response.ok) {
+                        showStatus('✅ Sitio web accesible. Listo para probar el chat.', 'success');
+                    }
+                })
+                .catch(error => {
+                    showStatus('⚠️ Verificando conexión con el sitio web...', 'info');
+                });
+        };
+    </script>
+</body>
+</html>

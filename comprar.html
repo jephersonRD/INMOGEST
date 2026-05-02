@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Compra - INMOGEST SRL</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/comprar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="srl.jpg" alt="INMOGEST SRL Logo" class="logo-img">
+                    <span class="logo-text">INMOGEST SRL</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="propiedades.html" class="nav-link">Propiedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vender.html" class="nav-link">Vender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#servicios" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="propiedades.html">Propiedades</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Proceso de Compra</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Purchase Process -->
+    <section class="purchase-section">
+        <div class="container">
+            <div class="purchase-header">
+                <h1 class="page-title">Proceso de Compra</h1>
+                <p class="page-subtitle">Complete los siguientes pasos para adquirir su propiedad</p>
+            </div>
+
+            <div class="purchase-container">
+                <!-- Property Summary -->
+                <div class="property-summary">
+                    <h2 class="summary-title">
+                        <i class="fas fa-home"></i>
+                        Resumen de la Propiedad
+                    </h2>
+                    <div id="propertySummary" class="summary-content">
+                        <!-- El resumen se cargará dinámicamente -->
+                        <div class="loading-summary">
+                            <div class="loading-spinner"></div>
+                            <p>Cargando información de la propiedad...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Purchase Form -->
+                <div class="purchase-form">
+                    <div class="form-steps">
+                        <div class="step active" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Información Personal</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Datos de Contacto</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Información Financiera</span>
+                        </div>
+                        <div class="step" data-step="4">
+                            <span class="step-number">4</span>
+                            <span class="step-title">Confirmación</span>
+                        </div>
+                    </div>
+
+                    <form id="purchaseForm" class="multi-step-form">
+                        <!-- Step 1: Personal Information -->
+                        <div class="form-step active" data-step="1">
+                            <h3 class="step-heading">
+                                <i class="fas fa-user"></i>
+                                Información Personal
+                            </h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Nombre *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Apellido *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idType">Tipo de Identificación *</label>
+                                    <select id="idType" name="idType" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="cedula">Cédula Dominicana</option>
+                                        <option value="pasaporte">Pasaporte</option>
+                                        <option value="residencia">Carnet de Residencia</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="idNumber">Número de Identificación *</label>
+                                    <input type="text" id="idNumber" name="idNumber" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="birthDate">Fecha de Nacimiento *</label>
+                                    <input type="date" id="birthDate" name="birthDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality">Nacionalidad *</label>
+                                    <select id="nationality" name="nationality" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="dominicana">Dominicana</option>
+                                        <option value="estadounidense">Estadounidense</option>
+                                        <option value="canadiense">Canadiense</option>
+                                        <option value="europea">Europea</option>
+                                        <option value="otra">Otra</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="civilStatus">Estado Civil</label>
+                                <select id="civilStatus" name="civilStatus">
+                                    <option value="">Seleccionar...</option>
+                                    <option value="soltero">Soltero(a)</option>
+                                    <option value="casado">Casado(a)</option>
+                                    <option value="divorciado">Divorciado(a)</option>
+                                    <option value="viudo">Viudo(a)</option>
+                                    <option value="union-libre">Unión Libre</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Contact Information -->
+                        <div class="form-step" data-step="2">
+                            <h3 class="step-heading">
+                                <i class="fas fa-address-book"></i>
+                                Datos de Contacto
+                            </h3>
+
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Teléfono Principal *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="altPhone">Teléfono Alternativo</label>
+                                    <input type="tel" id="altPhone" name="altPhone">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="currentAddress">Dirección Actual *</label>
+                                <input type="text" id="currentAddress" name="currentAddress" required placeholder="Calle, número, sector">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Ciudad *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="province">Provincia *</label>
+                                    <select id="province" name="province" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="distrito-nacional">Distrito Nacional</option>
+                                        <option value="santo-domingo">Santo Domingo</option>
+                                        <option value="santiago">Santiago</option>
+                                        <option value="la-altagracia">La Altagracia</option>
+                                        <option value="puerto-plata">Puerto Plata</option>
+                                        <option value="san-pedro">San Pedro de Macorís</option>
+                                        <option value="la-romana">La Romana</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emergencyContact">Contacto de Emergencia</label>
+                                <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Nombre completo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emergencyPhone">Teléfono de Emergencia</label>
+                                <input type="tel" id="emergencyPhone" name="emergencyPhone">
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Financial Information -->
+                        <div class="form-step" data-step="3">
+                            <h3 class="step-heading">
+                                <i class="fas fa-credit-card"></i>
+                                Información Financiera
+                            </h3>
+
+                            <div class="form-group">
+                                <label for="paymentMethod">Método de Pago Preferido *</label>
+                                <select id="paymentMethod" name="paymentMethod" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="transferencia">Transferencia Bancaria</option>
+                                    <option value="financiamiento">Financiamiento Bancario</option>
+                                    <option value="cash">Pago en Efectivo</option>
+                                    <option value="mixto">Pago Mixto</option>
+                                </select>
+                            </div>
+
+                            <div class="payment-details" id="paymentDetails" style="display: none;">
+                                <!-- Bank Transfer Details -->
+                                <div class="payment-option" data-payment="transferencia">
+                                    <h4>Detalles de Transferencia Bancaria</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="bankName">Banco</label>
+                                            <input type="text" id="bankName" name="bankName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="accountNumber">Número de Cuenta</label>
+                                            <input type="text" id="accountNumber" name="accountNumber">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Financing Details -->
+                                <div class="payment-option" data-payment="financiamiento">
+                                    <h4>Información de Financiamiento</h4>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="downPayment">Monto de Inicial (%)</label>
+                                            <input type="number" id="downPayment" name="downPayment" min="10" max="100">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="loanTerm">Plazo del Préstamo (años)</label>
+                                            <select id="loanTerm" name="loanTerm">
+                                                <option value="">Seleccionar...</option>
+                                                <option value="5">5 años</option>
+                                                <option value="10">10 años</option>
+                                                <option value="15">15 años</option>
+                                                <option value="20">20 años</option>
+                                                <option value="25">25 años</option>
+                                                <option value="30">30 años</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="monthlyIncome">Ingresos Mensuales (RD$)</label>
+                                        <input type="number" id="monthlyIncome" name="monthlyIncome">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="occupation">Ocupación *</label>
+                                <input type="text" id="occupation" name="occupation" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="employer">Empleador/Empresa</label>
+                                <input type="text" id="employer" name="employer">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="additionalNotes">Notas Adicionales</label>
+                                <textarea id="additionalNotes" name="additionalNotes" rows="3" placeholder="Cualquier información adicional que considere relevante..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Confirmation -->
+                        <div class="form-step" data-step="4">
+                            <h3 class="step-heading">
+                                <i class="fas fa-check-circle"></i>
+                                Confirmación de Datos
+                            </h3>
+
+                            <div class="confirmation-content">
+                                <div class="confirmation-section">
+                                    <h4>Información Personal</h4>
+                                    <div class="confirmation-data" id="confirmPersonal"></div>
+                                </div>
+
+                                <div class="confirmation-section">
+                                    <h4>Datos de Contacto</h4>
+                                    <div class="confirmation-data" id="confirmContact"></div>
+                                </div>
+
+                                <div class="confirmation-section">
+                                    <h4>Información Financiera</h4>
+                                    <div class="confirmation-data" id="confirmFinancial"></div>
+                                </div>
+
+                                <div class="terms-section">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                                        <span class="checkmark"></span>
+                                        Acepto los <a href="#" target="_blank">términos y condiciones</a> de INMOGEST SRL
+                                    </label>
+                                </div>
+
+                                <div class="terms-section">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="acceptPrivacy" name="acceptPrivacy" required>
+                                        <span class="checkmark"></span>
+                                        Acepto la <a href="#" target="_blank">política de privacidad</a> y el tratamiento de mis datos
+                                    </label>
+                                </div>
+
+                                <div class="terms-section">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="acceptMarketing" name="acceptMarketing">
+                                        <span class="checkmark"></span>
+                                        Deseo recibir información promocional y noticias de INMOGEST SRL
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation">
+                            <button type="button" id="prevStep" class="btn btn-secondary" style="display: none;">
+                                <i class="fas fa-chevron-left"></i>
+                                Anterior
+                            </button>
+                            <button type="button" id="nextStep" class="btn btn-primary">
+                                Siguiente
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button type="submit" id="submitForm" class="btn btn-success" style="display: none;">
+                                <i class="fas fa-check"></i>
+                                Enviar Solicitud
+                            </button>
+                        </div>
+
+                        <input type="hidden" id="propertyIdInput" name="propertyId">
+                        <input type="hidden" id="timestamp" name="timestamp">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>¡Solicitud Enviada Exitosamente!</h2>
+            <p>Hemos recibido su solicitud de compra. Nuestro equipo se pondrá en contacto con usted en las próximas 24 horas.</p>
+            <div class="reference-number">
+                <strong>Número de Referencia: <span id="referenceNumber"></span></strong>
+            </div>
+            <div class="modal-actions">
+                <a href="propiedades.html" class="btn btn-primary">Ver Más Propiedades</a>
+                <a href="index.html" class="btn btn-secondary">Volver al Inicio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="srl.jpg" alt="INMOGEST SRL Logo">
+                        <span>INMOGEST SRL</span>
+                    </div>
+                    <p>Tu socio de confianza en bienes raíces en República Dominicana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="propiedades.html">Propiedades</a></li>
+                        <li><a href="vender.html">Vender</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +1 (809) 555-0123</p>
+                        <p><i class="fas fa-envelope"></i> info@inmoges.com.do</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 INMOGEST SRL. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script src="assets/js/purchase.js"></script>
+    <script>
+        // Cargar tema guardado al entrar a la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+    
+    
+</body>
+</html>

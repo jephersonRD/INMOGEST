@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades - INMOGEST SRL</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/propiedades.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header header-transparent">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="srl.jpg" alt="INMOGEST SRL Logo" class="logo-img">
+                    <span class="logo-text">INMOGEST SRL</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="propiedades.html" class="nav-link active">Propiedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vender.html" class="nav-link">Vender</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#servicios" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Nuestras Propiedades</h1>
+                <p class="page-subtitle">Encuentra el hogar perfecto para ti y tu familia</p>
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Propiedades</span>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <form id="propertyFilters" class="filters-form">
+                    <div class="filters-row">
+                        <div class="filter-group">
+                            <label for="searchInput">
+                                <i class="fas fa-search"></i>
+                                Buscar
+                            </label>
+                            <input type="text" id="searchInput" name="search" placeholder="Buscar por ubicación, título...">
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="propertyType">
+                                <i class="fas fa-home"></i>
+                                Tipo
+                            </label>
+                            <select id="propertyType" name="type">
+                                <option value="">Todos los tipos</option>
+                                <option value="casa">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="terreno">Terreno</option>
+                                <option value="hotel">Hotel</option>
+                                <option value="residencial">Residencial</option>
+                                <option value="edificio">Edificio</option>
+                                <option value="local-comercial">Local Comercial</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="minPrice">
+                                <i class="fas fa-dollar-sign"></i>
+                                Precio Mín.
+                            </label>
+                            <select id="minPrice" name="minPrice">
+                                <option value="">Sin mínimo</option>
+                                <option value="50000">$50,000</option>
+                                <option value="100000">$100,000</option>
+                                <option value="200000">$200,000</option>
+                                <option value="300000">$300,000</option>
+                                <option value="500000">$500,000</option>
+                                <option value="1000000">$1,000,000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="maxPrice">
+                                <i class="fas fa-dollar-sign"></i>
+                                Precio Máx.
+                            </label>
+                            <select id="maxPrice" name="maxPrice">
+                                <option value="">Sin máximo</option>
+                                <option value="100000">$100,000</option>
+                                <option value="200000">$200,000</option>
+                                <option value="300000">$300,000</option>
+                                <option value="500000">$500,000</option>
+                                <option value="1000000">$1,000,000</option>
+                                <option value="2000000">$2,000,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Ubicación
+                            </label>
+                            <select id="location" name="location">
+                                <option value="">Todas las ubicaciones</option>
+                                <option value="santo-domingo">Santo Domingo</option>
+                                <option value="santiago">Santiago</option>
+                                <option value="la-romana">La Romana</option>
+                                <option value="puerto-plata">Puerto Plata</option>
+                                <option value="punta-cana">Punta Cana</option>
+                                <option value="san-pedro">San Pedro de Macorís</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="minSize">
+                                <i class="fas fa-ruler"></i>
+                                M² Mínimos
+                            </label>
+                            <input type="number" id="minSize" name="minSize" placeholder="0" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="filters-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Buscar
+                        </button>
+                        <button type="button" id="clearFilters" class="btn btn-secondary">
+                            <i class="fas fa-times"></i>
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-info">
+                    <span class="results-count">Mostrando <span id="resultsCount">0</span> propiedades</span>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="sort-options">
+                    <select id="sortBy" name="sortBy">
+                        <option value="newest">Más recientes</option>
+                        <option value="price-low">Precio: Menor a Mayor</option>
+                        <option value="price-high">Precio: Mayor a Menor</option>
+                        <option value="size-big">Tamaño: Mayor a Menor</option>
+                        <option value="size-small">Tamaño: Menor a Mayor</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="propertiesGrid" class="properties-grid">
+                <!-- Las propiedades se cargarán dinámicamente aquí -->
+            </div>
+            
+            <div id="noResults" class="no-results" style="display: none;">
+                <div class="no-results-content">
+                    <i class="fas fa-search"></i>
+                    <h3>No se encontraron propiedades</h3>
+                    <p>Intenta ajustar tus filtros de búsqueda para obtener más resultados.</p>
+                    <button id="resetFilters" class="btn btn-primary">Restablecer Filtros</button>
+                </div>
+            </div>
+            
+            <div class="pagination" id="pagination" style="display: none;">
+                <button class="pagination-btn" id="prevPage">
+                    <i class="fas fa-chevron-left"></i>
+                    Anterior
+                </button>
+                <div class="pagination-numbers" id="paginationNumbers">
+                    <!-- Los números de página se generarán dinámicamente -->
+                </div>
+                <button class="pagination-btn" id="nextPage">
+                    Siguiente
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Modal (for quick view) -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- El contenido del modal se cargará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="srl.jpg" alt="INMOGEST SRL Logo">
+                        <span>INMOGEST SRL</span>
+                    </div>
+                    <p>Tu socio de confianza en bienes raíces en República Dominicana.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="propiedades.html">Propiedades</a></li>
+                        <li><a href="vender.html">Vender</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +1 (809) 555-0123</p>
+                        <p><i class="fas fa-envelope"></i> info@inmoges.com.do</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 INMOGEST SRL. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="propiedades-nuevas/database.js"></script>
+    <script src="assets/js/properties.js"></script>
+    <script src="assets/js/database.js"></script>
+    <script>
+        // Cargar tema guardado al entrar a la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+    
+    
+</body>
+</html>

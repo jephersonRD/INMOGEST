@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INMOGEST SRL - Bienes Raíces República Dominicana</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="srl.jpg" alt="INMOGEST SRL Logo" class="logo-img">
+                    <span class="logo-text">INMOGEST SRL</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#nosotros" class="nav-link">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#servicios" class="nav-link">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="propiedades.html" class="nav-link">Propiedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+                
+                <!-- Botón de modo oscuro/claro -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/images/dia.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-subtitle">Bienvenido a</span>
+                INMOGEST SRL
+                <span class="hero-tagline">Bienes Raíces República Dominicana</span>
+            </h1>
+            <p class="hero-description">
+                Tu hogar ideal te está esperando. Más de 15 años conectando sueños con realidades en el mercado inmobiliario dominicano.
+            </p>
+            <div class="hero-buttons">
+                <a href="propiedades.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    Ver Propiedades
+                </a>
+                <a href="vender.html" class="btn btn-secondary">
+                    <i class="fas fa-plus"></i>
+                    Vender Propiedad
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Descubre más</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Propiedades Vendidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="1200">0</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="stat-number" data-count="32">0</div>
+                    <div class="stat-label">Ciudades</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre INMOGEST SRL</h2>
+                    <p class="section-subtitle">Líderes en Bienes Raíces en República Dominicana</p>
+                    <p>
+                        Desde 2008, INMOGEST SRL ha sido pionera en el mercado inmobiliario dominicano, 
+                        ofreciendo servicios de compra, venta y alquiler de propiedades con los más altos 
+                        estándares de calidad y profesionalismo.
+                    </p>
+                    <p>
+                        Nuestro equipo de expertos te acompaña en cada paso del proceso, garantizando 
+                        transparencia, confianza y resultados excepcionales en cada transacción.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Transacciones Seguras</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <span>Asesoría Personalizada</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Disponibilidad 24/7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="srl.jpg" alt="Oficina INMOGEST SRL">
+                    <div class="image-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Soluciones completas para todas tus necesidades inmobiliarias</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Compra de Propiedades</h3>
+                    <p>Te ayudamos a encontrar la propiedad perfecta que se adapte a tus necesidades y presupuesto.</p>
+                    <a href="propiedades.html" class="service-link">Ver Propiedades <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Venta de Propiedades</h3>
+                    <p>Vendemos tu propiedad al mejor precio del mercado con estrategias de marketing efectivas.</p>
+                    <a href="vender.html" class="service-link">Vender Ahora <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Alquiler</h3>
+                    <p>Servicios de alquiler tanto para propietarios como para inquilinos con contratos seguros.</p>
+                    <a href="#" class="service-link">Más Info <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Inversiones</h3>
+                    <p>Asesoramiento especializado en inversiones inmobiliarias rentables y sostenibles.</p>
+                    <a href="#" class="service-link">Consultar <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Asesoría Legal</h3>
+                    <p>Servicios legales especializados en derecho inmobiliario para transacciones seguras.</p>
+                    <a href="#" class="service-link">Contactar <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Financiamiento</h3>
+                    <p>Te conectamos con las mejores opciones de financiamiento para hacer realidad tu compra.</p>
+                    <a href="#" class="service-link">Simular <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                <p class="section-subtitle">Experiencias reales de familias que confiaron en nosotros</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Excelente servicio. Me ayudaron a encontrar la casa de mis sueños en tiempo récord. Muy profesionales y atentos en todo momento."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b332f38c?w=80&h=80&fit=crop&crop=face" alt="María González">
+                            <div>
+                                <h4>María González</h4>
+                                <span>Santo Domingo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Vendí mi apartamento con INMOGES y quedé completamente satisfecho. Obtuve el mejor precio y la gestión fue impecable."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="Carlos Mendoza">
+                            <div>
+                                <h4>Carlos Mendoza</h4>
+                                <span>Santiago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Increíble experiencia de compra. El equipo nos guió paso a paso y nos ahorraron mucho tiempo y esfuerzo. Altamente recomendados."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Ana Jiménez">
+                            <div>
+                                <h4>Ana Jiménez</h4>
+                                <span>La Romana</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-btn active"></button>
+                <button class="testimonial-btn"></button>
+                <button class="testimonial-btn"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Contáctanos</h2>
+                    <p class="section-subtitle">Estamos aquí para ayudarte en tu próxima inversión inmobiliaria</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Dirección</h4>
+                            <p>Av. Winston Churchill, Torre Empresarial, Piso 12<br>Santo Domingo, República Dominicana</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <p>+1 (809) 555-0123</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@inmoges.com.do</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Horarios</h4>
+                            <p>Lun - Vie: 8:00 AM - 6:00 PM<br>Sáb: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="comprar">Quiero comprar</option>
+                                    <option value="vender">Quiero vender</option>
+                                    <option value="alquilar">Quiero alquilar</option>
+                                    <option value="inversion">Inversión</option>
+                                    <option value="consulta">Consulta general</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="srl.jpg" alt="INMOGEST SRL Logo">
+                        <span>INMOGEST SRL</span>
+                    </div>
+                    <p>Tu socio de confianza en bienes raíces en República Dominicana. Más de 15 años creando hogares y construyendo sueños.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="propiedades.html">Propiedades</a></li>
+                        <li><a href="vender.html">Vender</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Compra</a></li>
+                        <li><a href="#">Venta</a></li>
+                        <li><a href="#">Alquiler</a></li>
+                        <li><a href="#">Inversiones</a></li>
+                        <li><a href="#">Asesoría Legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Winston Churchill, Santo Domingo</p>
+                        <p><i class="fas fa-phone"></i> +1 (809) 555-0123</p>
+                        <p><i class="fas fa-envelope"></i> info@inmoges.com.do</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 INMOGEST SRL. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/home.js"></script>
+    
+    
+</body>
+</html>

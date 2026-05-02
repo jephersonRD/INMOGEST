@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Chat Flotante</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+        .result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>Test Chat Flotante - INMOGEST SRL</h1>
+    
+    <div class="test-section">
+        <h2>Diagnósticos del Sistema</h2>
+        <div id="diagnostics"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Pruebas de Funcionalidad</h2>
+        <button class="test-button" onclick="testMicrophone()">🎤 Probar Micrófono</button>
+        <button class="test-button" onclick="testSpeechRecognition()">🎙️ Probar Reconocimiento de Voz</button>
+        <button class="test-button" onclick="testSpeechSynthesis()">🔊 Probar Síntesis de Voz</button>
+        <button class="test-button" onclick="testN8N()">🤖 Probar Conexión N8N</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Resultados</h2>
+        <div id="results"></div>
+    </div>
+    
+    <script>
+        let recognition;
+        let synthesis;
+        
+        // Initialize diagnostics
+        function runDiagnostics() {
+            const diagnostics = document.getElementById('diagnostics');
+            const checks = [
+                { name: 'HTTPS', value: location.protocol === 'https:', required: true },
+                { name: 'Speech Recognition', value: 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window, required: true },
+                { name: 'Speech Synthesis', value: 'speechSynthesis' in window, required: true },
+                { name: 'MediaDevices', value: 'mediaDevices' in navigator, required: true },
+                { name: 'GetUserMedia', value: navigator.mediaDevices && 'getUserMedia' in navigator.mediaDevices, required: true }
+            ];
+            
+            let html = '';
+            checks.forEach(check => {
+                const status = check.value ? 'success' : 'error';
+                const icon = check.value ? '✅' : '❌';
+                const required = check.required ? '(Requerido)' : '(Opcional)';
+                html += `<div class="result ${status}">${icon} ${check.name}: ${check.value ? 'Disponible' : 'No disponible'} ${required}</div>`;
+            });
+            
+            diagnostics.innerHTML = html;
+        }
+        
+        function addResult(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `result ${type}`;
+            div.textContent = new Date().toLocaleTimeString() + ' - ' + message;
+            results.appendChild(div);
+            console.log(message);
+        }
+        
+        async function testMicrophone() {
+            try {
+                addResult('Solicitando permisos del micrófono...', 'info');
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                addResult('✅ Permisos del micrófono concedidos', 'success');
+                stream.getTracks().forEach(track => track.stop());
+            } catch (error) {
+                addResult('❌ Error al acceder al micrófono: ' + error.message, 'error');
+            }
+        }
+        
+        function testSpeechRecognition() {
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                addResult('❌ Reconocimiento de voz no soportado', 'error');
+                return;
+            }
+            
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            
+            recognition.lang = 'es-ES';
+            recognition.interimResults = true;
+            recognition.continuous = false;
+            
+            recognition.onstart = () => {
+                addResult('🎙️ Reconocimiento de voz iniciado - Habla ahora', 'info');
+            };
+            
+            recognition.onresult = (event) => {
+                for (let i = event.resultIndex; i < event.results.length; i++) {
+                    const result = event.results[i];
+                    if (result.isFinal) {
+                        addResult('✅ Transcrito: "' + result[0].transcript + '"', 'success');
+                    }
+                }
+            };
+            
+            recognition.onerror = (event) => {
+                addResult('❌ Error de reconocimiento: ' + event.error, 'error');
+            };
+            
+            recognition.onend = () => {
+                addResult('🎙️ Reconocimiento de voz terminado', 'info');
+            };
+            
+            try {
+                recognition.start();
+            } catch (error) {
+                addResult('❌ Error al iniciar reconocimiento: ' + error.message, 'error');
+            }
+        }
+        
+        function testSpeechSynthesis() {
+            if (!('speechSynthesis' in window)) {
+                addResult('❌ Síntesis de voz no soportada', 'error');
+                return;
+            }
+            
+            const utterance = new SpeechSynthesisUtterance('Hola, esta es una prueba de síntesis de voz para INMOGEST SRL');
+            utterance.lang = 'es-ES';
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            utterance.volume = 0.8;
+            
+            utterance.onstart = () => {
+                addResult('🔊 Síntesis de voz iniciada', 'success');
+            };
+            
+            utterance.onend = () => {
+                addResult('✅ Síntesis de voz completada', 'success');
+            };
+            
+            utterance.onerror = (event) => {
+                addResult('❌ Error de síntesis: ' + event.error, 'error');
+            };
+            
+            addResult('🔊 Iniciando síntesis de voz...', 'info');
+            speechSynthesis.speak(utterance);
+        }
+        
+        async function testN8N() {
+            try {
+                addResult('🤖 Probando conexión con N8N...', 'info');
+                const response = await fetch('https://jephersonrd.app.n8n.cloud/webhook/cb626a1f-aaaa-44ee-a2cd-93445467a6bc/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chatInput: 'Hola, esto es una prueba',
+                        sessionId: 'test_' + Date.now()
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.text();
+                    addResult('✅ N8N respuesta: ' + data, 'success');
+                } else {
+                    addResult('❌ N8N error HTTP: ' + response.status, 'error');
+                }
+            } catch (error) {
+                addResult('❌ N8N error: ' + error.message, 'error');
+            }
+        }
+        
+        // Run diagnostics on load
+        runDiagnostics();
+    </script>
+</body>
+</html>
